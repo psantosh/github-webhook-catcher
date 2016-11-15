@@ -4,7 +4,7 @@ After=network.target auditd.service
 
 [Service]
 ExecStart=github-webhook-catcher -command /opt/github-webhook-catcher/catcher.sh
-ExecReload=/bin/kill -HUP \$MAINPID
+ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 Restart=on-failure
 RestartPreventExitStatus=255
